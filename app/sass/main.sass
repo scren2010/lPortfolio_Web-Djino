@@ -1,0 +1,195 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+
+
+
+.container
+	width: 100%
+	max-width: 1091px
+	margin: 0 auto
+	padding: 0 15px
+
+.wrap
+	display: grid
+	grid-template-columns: repeat(12, 1fr)
+	grid-template-rows: repeat(3, 100vh)
+	grid-template-areas: "h h h h h h h h h h h h" 	"i i i i i i i i i i i i" "a a a a a a a a a a a a"
+.header
+	grid-area: h 
+	background: url(../img/bg.jpg) no-repeat
+	background-position: center 
+	background-size: cover
+	&_inner
+		text-align: center
+		&-slogan
+			margin-bottom: 75px
+			h1
+			font-size: 40px
+			font-weight: bold
+			line-height: 1.2
+	&_box
+		
+.about
+	grid-area: a 
+	background-color: grey
+.nav
+	padding-top: 25px
+	display: flex
+	position: relative
+	
+	margin-bottom: 100px
+	&_logo
+		font-size: 20px
+		font-weight: bold
+		text-transform: uppercase
+		&-text
+			margin-left: 10px 
+			font-size: 16px
+			text-transform: capitalize
+
+	&_desc
+		position: absolute
+		bottom: -5px
+		left: 0
+		right: 0
+		// margin: 0 auto
+		font-size: 12px
+		font-weight: bold
+		text-transform: uppercase
+		text-align: center
+		
+.d2 
+	margin: 0 auto
+	width: 725px
+	background: rgba(50, 55, 62, .92)
+
+.form
+	position: relative
+
+.btnform 
+	position: absolute
+
+	top: 50%
+	right: 15px
+	z-index: 9
+	transform: translate(0px, -28px)
+
+  	cursor: pointer
+	border: none
+	outline: none
+	border-radius: 10px
+	
+	background-color: #5f6062
+	
+	padding: 15px 28px
+.inp 
+	width: 100%
+	height: 80px
+	background: $text
+	padding-left: 15px
+.btnform:before 
+  	color: $text	
+  	font-size: 22px
+  	font-weight: bold
+
+.infop
+	padding: 10px 
+	font-size: 16px
+	&_price
+		padding-left: 7px
+		color: $accent
+
+a 
+  text-decoration: none
+  outline: none
+  display: inline-block
+  padding: 0 45px
+  line-height: 45px
+  border-radius: 5px
+  margin: 10px 20px
+  font-family: 'Montserrat', sans-serif
+  font-size: 24px
+  text-align: center
+  letter-spacing: 1px
+  font-weight: 600
+  color: #fff
+  background: $accent
+  box-shadow: 0 8px 15px rgba(0,0,0,.1)
+  transition: .3s
+
+a:hover 
+  text-decoration: none
+  background: #2EE59D
+  box-shadow: 0 15px 20px rgba(46,229,157,.4)
+  color: white
+  transform: translateY(-7px)
+
+.info
+	grid-area: i 
+	color: #333
+	.nav
+		margin-bottom: 53px
+	&_title 
+		margin-bottom: 80px
+		h2
+		font-size: 25px
+		font-weight: bold
+		text-align: center
+		line-height: 1
+	&_content
+		display: grid
+		grid-template-columns: repeat(4, 1fr)
+		grid-template-rows: repeat(2, 1fr)
+	&_item
+		&-box
+			margin: 0 auto
+			text-align: center
+		&-img
+			margin-bottom: 22px
+		&-title
+			font-size: 20px
+
+
+.cRed
+	color: #b22725
+
+
+@import "media" // Always at the end
