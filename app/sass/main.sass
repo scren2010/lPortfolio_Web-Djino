@@ -50,7 +50,7 @@ b, strong
 .wrap
 	display: grid
 	grid-template-columns: repeat(12, 1fr)
-	grid-template-rows: repeat(3, 100vh)
+	grid-template-rows:  100vh  auto 1fr
 	grid-template-areas: "h h h h h h h h h h h h" 	"i i i i i i i i i i i i" "a a a a a a a a a a a a"
 .header
 	grid-area: h 
@@ -69,13 +69,63 @@ b, strong
 		
 .about
 	grid-area: a 
-	background-color: grey
+	background-image: linear-gradient(to top, #1a489c, #163b86, #102e71, #09225d, #031749)
+
+	&_text
+		font-size: 50px
+		font-weight: bold
+		text-align: center
+		margin-bottom: 50px
+		line-height: 1.1
+	&_info
+		display: grid
+		grid-template-columns: 5fr 1fr 
+		grid-template-rows: 110px
+
+		background-color: #df4a5e
+		border-radius: 5px
+		margin-bottom: 50px
+
+	&_bonus
+		padding: 35px 30px 35px 30px
+		font-size: 22px
+		align-self: center
+		position: relative
+		line-height: 1.1
+
+		&:after
+			position: absolute
+			top: 0
+			right: 0
+			bottom: 0
+			z-index: 2
+			content: ""
+			display: block
+			width: 1px
+			height: 40%
+			background-color: #e56e7e
+			margin:  auto
+	
+	
+	&_balls
+		font-size: 50px
+		font-weight: bold
+		text-align: center
+		align-self: center
+
+.copyright
+	font-size: 14px
+	margin-bottom: 50px
+
+
+
+
 .nav
 	padding-top: 25px
 	display: flex
 	position: relative
 	
-	margin-bottom: 100px
+	margin-bottom: 75px
 	&_logo
 		font-size: 20px
 		font-weight: bold
@@ -137,14 +187,14 @@ b, strong
 		padding-left: 7px
 		color: $accent
 
-a 
+.btn2 
   text-decoration: none
   outline: none
   display: inline-block
-  padding: 0 45px
+  padding: 0 25px
   line-height: 45px
   border-radius: 5px
-  margin: 10px 20px
+  margin: 10px 25px
   font-family: 'Montserrat', sans-serif
   font-size: 24px
   text-align: center
@@ -154,6 +204,7 @@ a
   background: $accent
   box-shadow: 0 8px 15px rgba(0,0,0,.1)
   transition: .3s
+  margin-bottom: 50px 
 
 a:hover 
   text-decoration: none
@@ -165,6 +216,7 @@ a:hover
 .info
 	grid-area: i 
 	color: #333
+	text-align: center
 	.nav
 		margin-bottom: 53px
 	&_title 
@@ -177,19 +229,33 @@ a:hover
 	&_content
 		display: grid
 		grid-template-columns: repeat(4, 1fr)
-		grid-template-rows: repeat(2, 1fr)
+		margin-bottom: 50px
 	&_item
+		margin: 0 auto
 		&-box
 			margin: 0 auto
 			text-align: center
 		&-img
-			margin-bottom: 22px
+			margin-bottom: 15px
 		&-title
 			font-size: 20px
 
+	&_desc
+		padding: 20px 45px
+		font-size: 16px		
+		border: 1px solid 
+		border-color: #afafb0
+		border-radius: 20px
+		line-height: 1.3
+		margin: 25px 0
+
+		
 
 .cRed
 	color: #b22725
+
+
+
 
 
 @import "media" // Always at the end
